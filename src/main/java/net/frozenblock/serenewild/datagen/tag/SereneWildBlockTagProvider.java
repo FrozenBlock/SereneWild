@@ -1,6 +1,6 @@
 /*
  * Copyright 2025 FrozenBlock
- * This file is part of Springier Life.
+ * This file is part of Serene Wild.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
