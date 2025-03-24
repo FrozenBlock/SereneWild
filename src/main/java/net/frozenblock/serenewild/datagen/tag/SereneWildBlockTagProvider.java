@@ -1,6 +1,6 @@
 /*
- * Copyright 2023-2025 FrozenBlock
- * This file is part of Wilder Wild.
+ * Copyright 2025 FrozenBlock
+ * This file is part of Springier Life.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
