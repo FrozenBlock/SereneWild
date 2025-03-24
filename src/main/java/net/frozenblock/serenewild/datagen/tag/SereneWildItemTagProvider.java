@@ -41,40 +41,21 @@ public final class SereneWildItemTagProvider extends FabricTagProvider.ItemTagPr
 			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
 			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
 
+		this.getOrCreateTagBuilder(getTag("sereneseasons:year_round_crops"))
+			.add(WWBlocks.BROWN_SHELF_FUNGI.asItem())
+			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
+			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
+
 		this.getOrCreateTagBuilder(getTag("sereneseasons:spring_crops"))
-			.add(WWBlocks.RED_HIBISCUS.asItem())
-			.add(WWBlocks.YELLOW_HIBISCUS.asItem())
-			.add(WWBlocks.WHITE_HIBISCUS.asItem())
-			.add(WWBlocks.PINK_HIBISCUS.asItem())
-			.add(WWBlocks.PURPLE_HIBISCUS.asItem())
 			.add(WWBlocks.BUSH.asItem())
-			.add(WWBlocks.MILKWEED.asItem())
-			.add(WWBlocks.DATURA.asItem())
-			.add(WWBlocks.WILDFLOWERS.asItem())
-			.add(WWBlocks.PHLOX.asItem())
-			.add(WWBlocks.LANTANAS.asItem())
-			.add(WWBlocks.CLOVERS.asItem())
 			.add(WWBlocks.WILLOW_SAPLING.asItem())
 			.add(WWBlocks.CYPRESS_SAPLING.asItem())
-			.add(WWBlocks.BAOBAB_NUT.asItem())
-			.add(WWBlocks.COCONUT.asItem())
 			.add(WWBlocks.BROWN_SHELF_FUNGI.asItem())
 			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
 			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
 
 		this.getOrCreateTagBuilder(getTag("sereneseasons:summer_crops"))
-			.add(WWBlocks.RED_HIBISCUS.asItem())
-			.add(WWBlocks.YELLOW_HIBISCUS.asItem())
-			.add(WWBlocks.WHITE_HIBISCUS.asItem())
-			.add(WWBlocks.PINK_HIBISCUS.asItem())
-			.add(WWBlocks.PURPLE_HIBISCUS.asItem())
 			.add(WWBlocks.BUSH.asItem())
-			.add(WWBlocks.MILKWEED.asItem())
-			.add(WWBlocks.DATURA.asItem())
-			.add(WWBlocks.WILDFLOWERS.asItem())
-			.add(WWBlocks.PHLOX.asItem())
-			.add(WWBlocks.LANTANAS.asItem())
-			.add(WWBlocks.CLOVERS.asItem())
 			.add(WWBlocks.WILLOW_SAPLING.asItem())
 			.add(WWBlocks.CYPRESS_SAPLING.asItem())
 			.add(WWBlocks.BAOBAB_NUT.asItem())
@@ -84,21 +65,12 @@ public final class SereneWildItemTagProvider extends FabricTagProvider.ItemTagPr
 			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
 
 		this.getOrCreateTagBuilder(getTag("sereneseasons:autumn_crops"))
-			.add(WWBlocks.SEEDING_DANDELION.asItem())
 			.add(WWBlocks.MAPLE_SAPLING.asItem())
-			.add(WWBlocks.MARIGOLD.asItem())
-			.add(WWBlocks.PASQUEFLOWER.asItem())
-			.add(WWBlocks.PHLOX.asItem())
-			.add(WWBlocks.LANTANAS.asItem())
 			.add(WWBlocks.BROWN_SHELF_FUNGI.asItem())
 			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
 			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
 
 		this.getOrCreateTagBuilder(getTag("sereneseasons:winter_crops"))
-			.add(WWBlocks.SEEDING_DANDELION.asItem())
-			.add(WWBlocks.PASQUEFLOWER.asItem())
-			.add(WWBlocks.MARIGOLD.asItem())
-			.add(WWBlocks.PHLOX.asItem())
 			.add(WWBlocks.BROWN_SHELF_FUNGI.asItem())
 			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
 			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());

@@ -22,7 +22,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.frozenblock.lib.feature_flag.api.FeatureFlagApi;
 import net.frozenblock.serenewild.datagen.tag.SereneWildBlockTagProvider;
-import net.frozenblock.wilderwild.WWConstants;
+import net.frozenblock.serenewild.datagen.tag.SereneWildItemTagProvider;
 import net.minecraft.core.RegistrySetBuilder;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,6 +35,7 @@ public final class SereneWildDataGenerator implements DataGeneratorEntrypoint {
 
 		// DATA
 		pack.addProvider(SereneWildBlockTagProvider::new);
+		pack.addProvider(SereneWildItemTagProvider::new);
 	}
 
 	@Override

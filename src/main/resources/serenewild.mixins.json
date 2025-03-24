@@ -4,6 +4,9 @@
   "package": "net.frozenblock.serenewild.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "RandomUpdateHandlerMixin",
+    "SeasonHooksMixin",
+    "immersivesnow.LogicMixin"
   ],
   "injectors": {
     "defaultRequire": 1

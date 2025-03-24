@@ -3,14 +3,14 @@
   "id": "${mod_id}",
   "version": "${version}",
   "name": "Serene Wild",
-  "description": "Fixes snowlogging & adds Serene Seasons tags for Wilder Wild!",
+  "description": "Fixes snowlogging with Serene Seasons/Immersive Snow, and adds tags for Serene Seasons x Wilder Wild!",
   "authors": [
     "Lunade"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/wilder-wild",
-    "sources": "https://github.com/FrozenBlock/WilderWild",
-    "issues": "https://github.com/FrozenBlock/WilderWild/issues"
+    "homepage": "https://modrinth.com/mod/serene-wild",
+    "sources": "https://github.com/FrozenBlock/SereneWild",
+    "issues": "https://github.com/FrozenBlock/SereneWild/issues"
   },
   "license": "LGPL-3.0",
   "icon": "assets/serenewild/icon.png",

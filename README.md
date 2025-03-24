@@ -1,4 +1,4 @@
-# Springier Life
+# Serene Wild
 
 
-Springier Life is an addon for Wilder Wild.
+Fixes snowlogging with Serene Seasons/Immersive Snow, and adds tags for Serene Seasons x Wilder Wild!

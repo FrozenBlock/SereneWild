@@ -50,6 +50,7 @@ val wilderwild_version: String by project
 val modmenu_version: String by project
 val cloth_config_version: String by project
 val sereneseasons_version: String by project
+val immersive_snow_version: String by project
 val glitchcore_version: String by project
 val nightconfig_version: String by project
 
@@ -80,7 +81,6 @@ loom {
         defaultRefmapName.set("mixins.$mod_id.refmap.json")
     }
 
-    accessWidenerPath.set(file("src/main/resources/$mod_id.accesswidener"))
     interfaceInjection {
         // When enabled, injected interfaces from dependencies will be applied.
         enableDependencyInterfaceInjection.set(false)
@@ -206,6 +206,9 @@ dependencies {
 
     // Serene Seasons
     modImplementation("maven.modrinth:serene-seasons:$sereneseasons_version")
+
+    // Immersive Snow
+    modImplementation("maven.modrinth:immersive-snow:$immersive_snow_version")
 
     // GlitchCore
     modImplementation("maven.modrinth:glitchcore:$glitchcore_version")
