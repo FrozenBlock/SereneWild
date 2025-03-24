@@ -23,7 +23,6 @@
   "mixins": [
     "serenewild.mixins.json"
   ],
-  "accessWidener": "serenewild.accesswidener",
   "depends": {
     "wilderwild": "${wilderwild_version}",
     "sereneseasons": "*",
