@@ -50,6 +50,8 @@ val wilderwild_version: String by project
 val modmenu_version: String by project
 val cloth_config_version: String by project
 val sereneseasons_version: String by project
+val glitchcore_version: String by project
+val nightconfig_version: String by project
 
 val sodium_version: String by project
 val run_sodium: String by project
@@ -205,6 +207,12 @@ dependencies {
     // Serene Seasons
     modImplementation("maven.modrinth:serene-seasons:$sereneseasons_version")
 
+    // GlitchCore
+    modImplementation("maven.modrinth:glitchcore:$glitchcore_version")
+    modImplementation("com.electronwill.night-config:toml:${nightconfig_version}")
+    modImplementation("com.electronwill.night-config:core:${nightconfig_version}")
+    modImplementation("net.jodah:typetools:0.6.3")
+
     // Mod Menu
     modImplementation("com.terraformersmc:modmenu:$modmenu_version")
 
@@ -228,11 +236,9 @@ tasks {
         val properties = mapOf(
             "mod_id" to mod_id,
             "version" to version,
-            "protocol_version" to protocol_version,
             "minecraft_version" to "~1.21-",//minecraft_version,
 
             "fabric_api_version" to ">=$fabric_api_version",
-            "frozenlib_version" to ">=${frozenlib_version.split('-').firstOrNull()}-",
             "wilderwild_version" to ">=${wilderwild_version.split('-').firstOrNull()}-"
         )
 
@@ -463,10 +469,8 @@ modrinth {
     )
     dependencies {
         required.project("fabric-api")
-        required.project("frozenlib")
         required.project("wilder-wild")
-        optional.project("cloth-config")
-        optional.project("modmenu")
+        required.project("serene-seasons")
     }
 }
 

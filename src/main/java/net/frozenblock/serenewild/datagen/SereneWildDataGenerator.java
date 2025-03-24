@@ -16,17 +16,17 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
-package net.frozenblock.springierlife.datagen;
+package net.frozenblock.serenewild.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.frozenblock.lib.feature_flag.api.FeatureFlagApi;
-import net.frozenblock.springierlife.SLConstants;
-import net.frozenblock.springierlife.datagen.tag.SLBlockTagProvider;
+import net.frozenblock.serenewild.datagen.tag.SereneWildBlockTagProvider;
+import net.frozenblock.wilderwild.WWConstants;
 import net.minecraft.core.RegistrySetBuilder;
 import org.jetbrains.annotations.NotNull;
 
-public final class SLDataGenerator implements DataGeneratorEntrypoint {
+public final class SereneWildDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void onInitializeDataGenerator(@NotNull FabricDataGenerator dataGenerator) {
@@ -34,7 +34,7 @@ public final class SLDataGenerator implements DataGeneratorEntrypoint {
 		final FabricDataGenerator.Pack pack = dataGenerator.createPack();
 
 		// DATA
-		pack.addProvider(SLBlockTagProvider::new);
+		pack.addProvider(SereneWildBlockTagProvider::new);
 	}
 
 	@Override
@@ -43,6 +43,6 @@ public final class SLDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public @NotNull String getEffectiveModId() {
-		return SLConstants.MOD_ID;
+		return "serenewild";
 	}
 }

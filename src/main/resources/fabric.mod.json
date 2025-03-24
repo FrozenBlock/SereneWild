@@ -25,7 +25,6 @@
   ],
   "accessWidener": "serenewild.accesswidener",
   "depends": {
-    "frozenlib": "${frozenlib_version}",
     "wilderwild": "${wilderwild_version}",
     "sereneseasons": "*",
     "fabric-api": "*",
