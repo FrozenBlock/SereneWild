@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "net.frozenblock.serenewild.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "block.bush.WilderBushBlockMixin",
+    "block.cattail.CattailBlockMixin",
+    "block.leaves.LeavesBlockMixin",
+    "block.shelf_fungi.ShelfFungiBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
