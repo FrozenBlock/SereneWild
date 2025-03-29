@@ -41,11 +41,6 @@ public final class SereneWildItemTagProvider extends FabricTagProvider.ItemTagPr
 			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
 			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
 
-		this.getOrCreateTagBuilder(getTag("sereneseasons:year_round_crops"))
-			.add(WWBlocks.BROWN_SHELF_FUNGI.asItem())
-			.add(WWBlocks.RED_SHELF_FUNGI.asItem())
-			.add(WWBlocks.TUMBLEWEED_PLANT.asItem());
-
 		this.getOrCreateTagBuilder(getTag("sereneseasons:spring_crops"))
 			.add(WWBlocks.BUSH.asItem())
 			.add(WWBlocks.WILLOW_SAPLING.asItem())
