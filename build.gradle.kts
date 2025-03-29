@@ -208,7 +208,7 @@ dependencies {
     modImplementation("maven.modrinth:serene-seasons:$sereneseasons_version")
 
     // Immersive Snow
-    modCompileOnly("maven.modrinth:immersive-snow:$immersive_snow_version")
+    modImplementation("maven.modrinth:immersive-snow:$immersive_snow_version")
 
     // GlitchCore
     modImplementation("maven.modrinth:glitchcore:$glitchcore_version")
