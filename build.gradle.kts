@@ -208,7 +208,7 @@ dependencies {
     modImplementation("maven.modrinth:serene-seasons:$sereneseasons_version")
 
     // Immersive Snow
-    modImplementation("maven.modrinth:immersive-snow:$immersive_snow_version")
+    modCompileOnly("maven.modrinth:immersive-snow:$immersive_snow_version")
 
     // GlitchCore
     modImplementation("maven.modrinth:glitchcore:$glitchcore_version")
@@ -217,10 +217,10 @@ dependencies {
     modImplementation("net.jodah:typetools:0.6.3")
 
     // Mod Menu
-    modImplementation("com.terraformersmc:modmenu:$modmenu_version")
+    modCompileOnly("com.terraformersmc:modmenu:$modmenu_version")
 
     // Cloth Config
-    modImplementation("me.shedaniel.cloth:cloth-config-fabric:$cloth_config_version") {
+    modCompileOnly("me.shedaniel.cloth:cloth-config-fabric:$cloth_config_version") {
         exclude(group = "net.fabricmc.fabric-api")
         exclude(group = "com.terraformersmc")
     }
