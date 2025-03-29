@@ -20,40 +20,34 @@ package net.frozenblock.serenewild.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.llamalad7.mixinextras.sugar.Local;
 import net.frozenblock.wilderwild.block.impl.SnowloggingUtils;
 import net.frozenblock.wilderwild.block.impl.SnowyBlockUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
-import sereneseasons.season.RandomUpdateHandler;
 
-@Pseudo
-@Mixin(RandomUpdateHandler.class)
-public class RandomUpdateHandlerMixin {
+@Mixin(value = ServerLevel.class, priority = 1050)
+public class ServerLevelMixin {
 
 	@WrapOperation(
-		method = "meltInChunk",
+		method = "tickPrecipitation",
 		at = @At(
 			value = "INVOKE",
-			target = "Lnet/minecraft/world/level/block/state/BlockState;getBlock()Lnet/minecraft/world/level/block/Block;",
-			ordinal = 0
+			target = "Lnet/minecraft/server/level/ServerLevel;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z",
+			ordinal = 2
 		)
 	)
-	private static Block sereneWild$fixSnowloggedMelting(
-		BlockState blockState, Operation<Block> original,
-		@Local ServerLevel serverLevel,
-		@Local(ordinal = 0) BlockPos topAirPos
+	private boolean sereneWild$tickPrecipitation(
+		ServerLevel instance, BlockPos pos, BlockState blockState, Operation<Boolean> original
 	) {
-		if (SnowloggingUtils.isSnowlogged(blockState)) {
-			SnowyBlockUtils.replaceWithNonSnowyEquivalent(serverLevel, blockState, topAirPos);
-			serverLevel.setBlockAndUpdate(topAirPos, SnowloggingUtils.getStateWithoutSnow(SnowyBlockUtils.getNonSnowyEquivalent(blockState)));
+		boolean setBlock = original.call(instance, pos, blockState);
+		BlockState newState = instance.getBlockState(pos);
+		if (SnowloggingUtils.isSnowlogged(newState)) {
+			SnowyBlockUtils.replaceWithWorldgenSnowyEquivalent(instance, newState, pos);
 		}
-		return original.call(blockState);
+		return setBlock;
 	}
 
 }

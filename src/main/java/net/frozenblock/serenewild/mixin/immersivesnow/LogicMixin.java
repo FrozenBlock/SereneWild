@@ -24,7 +24,9 @@ import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import net.frozenblock.wilderwild.block.impl.SnowloggingUtils;
+import net.frozenblock.wilderwild.block.impl.SnowyBlockUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.LevelWriter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -59,11 +61,15 @@ public class LogicMixin {
 	)
 	private static void sereneWild$fixSnowloggingB(
 		LevelWriter level, BlockPos pos, BlockState state, Operation<Void> original,
+		@Local(argsOnly = true) ServerLevel serverLevel,
 		@Local(ordinal = 0) BlockState topState
 	) {
 		if (SnowloggingUtils.canSnowlog(topState)) {
-			original.call(level, pos, SnowloggingUtils.getSnowloggedState(topState, state));
+			SnowyBlockUtils.replaceWithWorldgenSnowyEquivalent(serverLevel, topState, pos);
+			original.call(level, pos, SnowloggingUtils.getSnowloggedState(SnowyBlockUtils.getWorldgenSnowyEquivalent(topState), state));
+			return;
 		}
+		original.call(level, pos, state);
 	}
 
 	@WrapOperation(
@@ -96,11 +102,13 @@ public class LogicMixin {
 	)
 	private static void sereneWild$fixMeltingB(
 		LevelWriter level, BlockPos pos, BlockState state, Operation<Void> original,
+		@Local(argsOnly = true) ServerLevel serverLevel,
 		@Local(ordinal = 0) BlockState topState,
 		@Share("sereneWild$isSnowlogged") LocalBooleanRef isSnowlogged
 	) {
 		if (isSnowlogged.get()) {
-			original.call(level, pos, SnowloggingUtils.getStateWithoutSnow(topState));
+			SnowyBlockUtils.replaceWithNonSnowyEquivalent(serverLevel, topState, pos);
+			original.call(level, pos, SnowloggingUtils.getStateWithoutSnow(SnowyBlockUtils.getNonSnowyEquivalent(topState)));
 			return;
 		}
 		original.call(level, pos, state);
