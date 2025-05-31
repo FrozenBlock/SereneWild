@@ -42,7 +42,7 @@ public final class SereneWildBlockTagProvider extends FabricTagProvider.BlockTag
 			.add(WWBlocks.TUMBLEWEED_PLANT);
 
 		this.getOrCreateTagBuilder(getTag("sereneseasons:spring_crops"))
-			.add(WWBlocks.BUSH)
+			.add(WWBlocks.SHRUB)
 			.add(WWBlocks.WILLOW_SAPLING)
 			.add(WWBlocks.CYPRESS_SAPLING)
 			.add(WWBlocks.BROWN_SHELF_FUNGI)
@@ -50,7 +50,7 @@ public final class SereneWildBlockTagProvider extends FabricTagProvider.BlockTag
 			.add(WWBlocks.TUMBLEWEED_PLANT);
 
 		this.getOrCreateTagBuilder(getTag("sereneseasons:summer_crops"))
-			.add(WWBlocks.BUSH)
+			.add(WWBlocks.SHRUB)
 			.add(WWBlocks.WILLOW_SAPLING)
 			.add(WWBlocks.CYPRESS_SAPLING)
 			.add(WWBlocks.BAOBAB_NUT)
